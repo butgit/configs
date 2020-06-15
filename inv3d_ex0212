@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+an invitation to 3d vision exercise 2-10
+"""
+
+from sympy import *
+u1, u2, u3, v1,v2,v3 ,s11,s12,s13,s21,s22,s23,s31,s32,s33= symbols('u1 u2 u3 v1 v2 v3 s11 s12 s13 s21 s22 s23 s31 s32 s33')
+u, v, s = symbols('u v s')
+theta = symbols('theta')
+u = Matrix([u1,u2,u3])
+v = Matrix([v1,v2,v3])
+s = Matrix([[s11,s12,s13],[s21,s22,s23],[s31,s32,s33]])
+
+uhat = Matrix([[0,-u[2],u[1]],[u[2],0,-u[0]],[-u[1],u[0],0]])
+
+
+ (eval1,_,evec1), (eval2,_,evec2),(eval3,_,evec3) = R.eigenvects(simplify=True)
+seval1 = eval1.subs(u.dot(u),1)
+sevec1 = [simplify(item.subs(u.dot(u),1)) for item in evec1]
+# seval2 = eval2.subs(u.dot(u),1)
+# sevec2 = [simplify(item.subs(u.dot(u),1)) for item in evec2]
+# seval3 = eval2.subs(u.dot(u),1)
+# sevec3 = [simplify(item.subs(u.dot(u),1)) for item in evec3]
+
+
