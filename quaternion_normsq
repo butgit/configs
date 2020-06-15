@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+an invitation to 3d vision exercise 2-10
+"""
+
+from sympy import *
+from sympy.algebras.quaternion import Quaternion
+
+q, qbar, q1,q2,q3,q4 = symbols('q qbar q1 q2 q3 q4')
+q= Quaternion(q1,q2,q3,q4)
+qbar= Quaternion(q1,-q2,-q3,-q4)
+simplify(q*qbar)
