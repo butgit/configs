@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+an invitation to 3d vision exercise 2-10
+"""
+
+#from sympy import *
+from mpmath import *
+init_printing(use_latex=False)
+
+A = matrix([[1,1,0],[0,1,1]])
+pprint(A.T*A)
+pprint(A*A.T)
+
+E,ER=eig(A.T*A)
+pprint(E)
+E,ER=eig(A*A.T)
+pprint(E)
+
+U,S,VT = svd(A, full_matrices=True)
+pprint(VT.T)
+pprint(U)
+pprint(A*VT.T)
+Sigma = diag(S)*matrix([[1,0,0],[0,1,0]])
+pprint(Sigma)
+pprint(A*VT.T-U*Sigma)
